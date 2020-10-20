@@ -2,17 +2,17 @@ classdef IKSolver < matlab.mixin.Copyable
     properties
         l
         w
-        theta
+        theta % Current joint angles
         P0
         P
         Rl
         Rg
-        O
-        G
-        X
-        nJ
-        ee
-        J
+        O % IK Objective E(theta)=||FK(theta)-X||^2
+        G % IK Gradient J'*(FK(theta)-X)
+        X % Target position
+        nJ% Number of Joints
+        ee% Current end effector position
+        J % Velocity Jacobian
         ForceStop
         Stop
     end
